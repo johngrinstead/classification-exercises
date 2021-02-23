@@ -51,9 +51,16 @@ def get_titanic_data():
 def get_iris_data():
     # Create SQL query.
     sql_query = '''
-    select *
-from measurements
-join species on measurements.species_id;
+    SELECT species_id,
+				measurement_id,
+                species_name,
+                sepal_length,
+                sepal_width,
+                petal_length,
+                petal_width
+                FROM measurements
+                JOIN species
+                USING(species_id);
     '''
     
     # Read in DataFrame from Codeup db.
@@ -101,9 +108,16 @@ def get_iris_data(cached=False):
     
     # Create SQL query.
         sql_query = '''
-        select *
-        from measurements
-        join species on measurements.species_id;
+        SELECT species_id,
+				measurement_id,
+                species_name,
+                sepal_length,
+                sepal_width,
+                petal_length,
+                petal_width
+                FROM measurements
+                JOIN species
+                USING(species_id);
         '''
     
     # Read in DataFrame from Codeup db.
@@ -119,5 +133,5 @@ def get_iris_data(cached=False):
 
 
 
-    
+
 
